@@ -1,29 +1,34 @@
-<div class="form-group">
-  <label for="firstName">First Name:</label>
-  <input type="text" class="form-control" id="firstName" name="firstName" required>
-</div>
+{{ formName.value | json }}
 
-<div class="form-group">
-  <label for="lastName">Last Name:</label>
-  <input type="text" class="form-control" id="lastName" name="lastName" required>
-</div>
+<form #formName="ngForm">
 
-<div class="form-group">
-  <label for="email">Email:</label>
-  <input type="text" class="form-control" id="email" name="email" required>
-</div>
+  <div class="form-group">
+    <label for="firstName">First Name:</label>
+    <input type="text" class="form-control" id="firstName" name="firstName" required #inputName="ngModel" ngModel>
+  </div>
 
-<div class="form-group">
-  <label for="phoneNumber">Phone Number:</label>
-  <input type="text" class="form-control" id="phoneNumber" name="phoneNumber">
-</div>
+  <div class="form-group">
+    <label for="lastName">Last Name:</label>
+    <input type="text" class="form-control" id="lastName" name="lastName" required #inputName="ngModel" ngModel>
+  </div>
 
-<div class="form-group">
-  <label for="favLanguage">Favorite Language:</label>
-  <select class="form-control" id="favLanguage" required>
-    <option *ngFor="let lang of languages" [value]="lang">{{lang}}</option>
-  </select>
-</div>
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="text" class="form-control" id="email" name="email" required #inputName="ngModel" ngModel>
+  </div>
 
-<button type="button" class="btn btn-default">Submit</button>
+  <div class="form-group">
+    <label for="phoneNumber">Phone Number:</label>
+    <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" #inputName="ngModel" ngModel>
+  </div>
 
+  <div class="form-group">
+    <label for="favLanguage">Favorite Language:</label>
+    <select class="form-control" id="favLanguage" name="favLanguage" required #inputName="ngModel" ngModel>
+      <option *ngFor="let lang of languages" [value]="lang">{{lang}}</option>
+    </select>
+  </div>
+
+  <button type="button" class="btn btn-default">Submit</button>
+
+</form>
