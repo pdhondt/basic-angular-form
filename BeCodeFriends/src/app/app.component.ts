@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Friend } from './friend';
+import { AddFriendService } from './add-friend.service';
 
 @Component({
   selector: 'app-root',
@@ -12,8 +13,15 @@ export class AppComponent {
 
   friendModel = new Friend('', '', '', '', '');
 
-  onSubmit(): void {
-    console.log(this.friendModel.firstName + ' ' + this.friendModel.lastName + ' ' + this.friendModel.favLanguage);
+  constructor(private _addFriendService: AddFriendService) {
+  }
+
+  onSubmit() {
+    this._addFriendService.addFriend(this.friendModel)
+      .subscribe(
+        data => console.log('it worked', data),
+        error => console.error('it did not work', error)
+     );
   }
 
 }
