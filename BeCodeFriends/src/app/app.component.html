@@ -1,6 +1,6 @@
 {{ friendModel | json }}
 
-<form #formName="ngForm">
+<form #friendForm="ngForm" novalidate>
 
   <div class="form-group">
     <label for="firstName">First Name:</label>
@@ -39,6 +39,6 @@
     </select>
   </div>
 
-  <button type="button" class="btn btn-default">Submit</button>
+  <button [disabled]="friendForm.form.invalid" type="button" class="btn btn-default">Submit</button>
 
 </form>
