@@ -4,27 +4,27 @@
 
   <div class="form-group">
     <label for="firstName">First Name:</label>
-    <input type="text" class="form-control" id="firstName" name="firstName" required #inputName="ngModel" [(ngModel)]="friendModel.firstName">
+    <input [class.invalidinput]="firstName.invalid && firstName.touched" type="text" class="form-control"  id="firstName" name="firstName" required #firstName="ngModel" [(ngModel)]="friendModel.firstName">
   </div>
 
   <div class="form-group">
     <label for="lastName">Last Name:</label>
-    <input type="text" class="form-control" id="lastName" name="lastName" required #inputName="ngModel" [(ngModel)]="friendModel.lastName">
+    <input [class.invalidinput]="lastName.invalid && lastName.touched" type="text" class="form-control" id="lastName" name="lastName" required #lastName="ngModel" [(ngModel)]="friendModel.lastName">
   </div>
 
   <div class="form-group">
     <label for="email">Email:</label>
-    <input type="text" class="form-control" id="email" name="email" required #inputName="ngModel" [(ngModel)]="friendModel.email">
+    <input [class.invalidinput]="email.invalid && email.touched" type="text" class="form-control" id="email" name="email" required #email="ngModel" [(ngModel)]="friendModel.email">
   </div>
 
   <div class="form-group">
     <label for="phoneNumber">Phone Number:</label>
-    <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" #inputName="ngModel" [(ngModel)]="friendModel.phoneNumber">
+    <input [class.invalidinput]="phoneNumber.invalid && phoneNumber.touched" type="text" class="form-control" id="phoneNumber" name="phoneNumber" required #phoneNumber="ngModel" [(ngModel)]="friendModel.phoneNumber">
   </div>
 
   <div class="form-group">
     <label for="favLanguage">Favorite Language:</label>
-    <select class="form-control" id="favLanguage" name="favLanguage" required #inputName="ngModel" [(ngModel)]="friendModel.favLanguage">
+    <select [class.invalidinput]="favLanguage.invalid && favLanguage.touched" class="form-control" id="favLanguage" name="favLanguage" required #favLanguage="ngModel" [(ngModel)]="friendModel.favLanguage">
       <option *ngFor="let lang of languages" [value]="lang">{{lang}}</option>
     </select>
   </div>
