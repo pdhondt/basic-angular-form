@@ -7,7 +7,7 @@ import { Friend } from './friend';
 })
 export class AddFriendService {
 
-  _url = '';
+  _url = 'http://localhost:9078/addFriend/';
 
   constructor(
     private _http: HttpClient
