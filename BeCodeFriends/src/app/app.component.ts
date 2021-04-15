@@ -12,5 +12,9 @@ export class AppComponent {
 
   friendModel = new Friend('', '', '', '', '');
 
+  onSubmit(): void {
+    console.log(this.friendModel.firstName + ' ' + this.friendModel.lastName + ' ' + this.friendModel.favLanguage);
+  }
+
 }
 

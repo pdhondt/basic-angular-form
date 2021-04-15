@@ -1,6 +1,6 @@
 {{ friendModel | json }}
 
-<form #friendForm="ngForm" novalidate>
+<form (ngSubmit)="onSubmit()" #friendForm="ngForm" novalidate>
 
   <div class="form-group">
     <label for="firstName">First Name:</label>
